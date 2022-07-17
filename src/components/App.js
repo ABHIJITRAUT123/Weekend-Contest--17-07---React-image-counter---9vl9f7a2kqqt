@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import '../styles/App.css';
 import star from '../star.png'
 const App = () => {
-  const [counter, setCounter] = useState(0)
+  const [height, setHeight] = useState(300);
+  const [width, setWidth] = useState(300);
   
-  const handleClick1 = () => {
-  setCounter(counter+1)
+  const increseFunction = () => {
+  setHeight(height+2);
+  setWidth(width+2);
   }
   
    const handleClick2 = () => {
@@ -14,8 +16,8 @@ const App = () => {
   
   return (
     <>
-       <div id="main">
-           <img src={star}  height="300px" width="300px" />
+       <div id="main" onClick = {increseFunction}>
+           <img src={star}  height={height} width={width} />
        </div>
     </>
   )
